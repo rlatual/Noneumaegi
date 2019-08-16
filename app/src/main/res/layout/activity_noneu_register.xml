@@ -6,5 +6,242 @@
     android:layout_height="match_parent"
     tools:context=".NoneuRegisterActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:gravity="left"
+                android:text="이미지"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@drawable/rect_round_forimg"
+                app:layout_constraintTop_toBottomOf="@id/tv_img" />
+
+            <TextView
+                android:id="@+id/tv_kind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:gravity="left"
+                android:text="종류"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/iv_image" />
+
+            <Button
+                android:id="@+id/btn_kind1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/rect_round_forimg"
+                android:text="대분류"
+                app:layout_constraintBottom_toBottomOf="@id/tv_kind"
+                app:layout_constraintLeft_toLeftOf="@id/et_name"
+                app:layout_constraintTop_toTopOf="@id/tv_kind" />
+
+            <Button
+                android:id="@+id/btn_kind2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:background="@drawable/rect_round_forimg"
+                android:text="소분류"
+                app:layout_constraintBottom_toBottomOf="@id/tv_kind"
+                app:layout_constraintLeft_toRightOf="@id/btn_kind1"
+                app:layout_constraintTop_toTopOf="@id/tv_kind" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="상품명"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/tv_kind" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:background="@color/transParent"
+                android:hint="상품명을 입력해주세요"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                app:layout_constraintLeft_toRightOf="@id/tv_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_ferperson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="인당\n개수"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <EditText
+                android:id="@+id/et_ferperson"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:background="@color/transParent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/tv_ferperson"
+                app:layout_constraintLeft_toLeftOf="@id/et_name"
+                app:layout_constraintRight_toLeftOf="@id/tv_ferperson_2"
+                app:layout_constraintTop_toTopOf="@id/tv_ferperson" />
+
+            <TextView
+                android:id="@+id/tv_ferperson_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개"
+                app:layout_constraintBottom_toBottomOf="@id/tv_ferperson"
+                app:layout_constraintRight_toLeftOf="@id/btn_kind2"
+                app:layout_constraintTop_toTopOf="@id/tv_ferperson" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="인당\n부담금"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/tv_ferperson" />
+
+
+            <EditText
+                android:id="@+id/et_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transParent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/tv_money"
+                app:layout_constraintLeft_toLeftOf="@id/et_name"
+                app:layout_constraintRight_toLeftOf="@id/btn_kind2"
+                app:layout_constraintTop_toTopOf="@id/tv_money" />
+
+            <TextView
+                android:id="@+id/tv_money2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:text="원"
+                app:layout_constraintBottom_toBottomOf="@id/tv_money"
+                app:layout_constraintLeft_toRightOf="@id/et_money"
+                app:layout_constraintTop_toTopOf="@id/tv_money" />
+
+            <TextView
+                android:id="@+id/tv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="위치"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/et_money" />
+
+            <ImageView
+                android:id="@+id/iv_position"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@drawable/rect_round_forimg"
+                app:layout_constraintLeft_toLeftOf="@id/iv_image"
+                app:layout_constraintRight_toRightOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_map" />
+
+            <TextView
+                android:id="@+id/tv_memo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:text="상세 사항"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/iv_position" />
+
+            <EditText
+                android:id="@+id/et_memo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:background="@color/transParent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintRight_toRightOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_memo" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="만날\n시간"
+                app:layout_constraintLeft_toLeftOf="@id/tv_img"
+                app:layout_constraintTop_toBottomOf="@id/et_memo" />
+
+            <RadioGroup
+                android:visibility="gone"
+                android:id="@+id/rg_time1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/tv_time"
+                app:layout_constraintTop_toTopOf="@id/tv_time"
+                app:layout_constraintRight_toRightOf="@id/iv_image"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_time1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="평일 선호"
+                    android:button="@drawable/selector_button" />
+
+                <RadioButton
+                    android:id="@+id/rb_time2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="주말 선호"
+                    android:button="@drawable/selector_button" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/colorPrimary"
+                android:text="등록하기"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/rg_time1" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>
