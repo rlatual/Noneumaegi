@@ -4,16 +4,61 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include layout="@layout/toolbar" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="SAMPLE"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
 
+    <EditText
+        android:id="@+id/et_search"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:background="@drawable/rect_round_primcolor"
+        android:drawableLeft="@drawable/ic_search_prim_24dp"
+        android:hint="검색어를 입력해주세요."
+        android:paddingVertical="@dimen/margin_8dp"
+        android:paddingLeft="@dimen/margin_8dp" />
+
+    <Button
+        android:id="@+id/btn_filter"
+        app:layout_constraintRight_toLeftOf="@id/btn_new"
+        app:layout_constraintTop_toTopOf="@id/btn_new"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginRight="@dimen/margin_8dp"
+        android:background="@drawable/ic_filter_list_primcolor_24dp" />
+
+    <Button
+        android:id="@+id/btn_new"
+        app:layout_constraintRight_toRightOf="@id/et_search"
+        app:layout_constraintTop_toBottomOf="@id/et_search"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/ic_add_primcolor_24dp" />
+
+    <ListView
+        android:id="@+id/lv_list"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintLeft_toLeftOf="@id/et_search"
+        app:layout_constraintRight_toRightOf="@id/et_search"
+        app:layout_constraintTop_toBottomOf="@id/btn_new"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"></ListView>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        ads:layout_constraintBottom_toBottomOf="parent"></com.google.android.gms.ads.AdView>
 </android.support.constraint.ConstraintLayout>

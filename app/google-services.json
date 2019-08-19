@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "345232548056",
+    "firebase_url": "https://noneumaegi-9560a.firebaseio.com",
+    "project_id": "noneumaegi-9560a",
+    "storage_bucket": "noneumaegi-9560a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345232548056:android:a2df9a3c43d1deb1",
+        "android_client_info": {
+          "package_name": "com.nonu.noneumaegi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345232548056-hmnt2099didvorhrvl4fonkcdto8vqfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2eVfLvKOC3vd0MTFZvgtkvCM-OB-3Bj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345232548056-hmnt2099didvorhrvl4fonkcdto8vqfv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4927595503113139~4626369512"
+    }
+  ],
+  "configuration_version": "1"
+}
