@@ -1,21 +1,28 @@
 package com.nonu.noneumaegi;
 
-import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.nonu.noneumaegi.Adapter.MainListAdatper;
-import com.nonu.noneumaegi.VO.MainItemVO;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -55,7 +62,36 @@ public class MainActivity extends AppCompatActivity {
         });
 
         adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
-                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),"산곡동", "상품명", "1000원","3개");
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+        adatper.addItem(ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp),
+                ContextCompat.getDrawable(this, R.drawable.ic_add_primcolor_24dp), "산곡동", "상품명", "1000원", "3개");
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("MainActivity", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                    }
+                });
 
     }
 

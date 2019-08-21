@@ -7,4 +7,6 @@
     <dimen name="icon_size">24dp</dimen>
     <dimen name="img_size">48dp</dimen>
 
+    <dimen name="setting_line">8dp</dimen>
+
 </resources>

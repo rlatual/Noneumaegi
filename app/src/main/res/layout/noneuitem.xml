@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -10,7 +10,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -187,42 +187,79 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_memo" />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16dp"
                 android:text="만날\n시간"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="@id/tv_img"
                 app:layout_constraintTop_toBottomOf="@id/et_memo" />
 
             <RadioGroup
-                android:visibility="gone"
                 android:id="@+id/rg_time1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toRightOf="@id/tv_time"
-                app:layout_constraintTop_toTopOf="@id/tv_time"
-                app:layout_constraintRight_toRightOf="@id/iv_image"
                 android:layout_marginLeft="@dimen/margin_8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@id/tv_time"
+                app:layout_constraintRight_toRightOf="@id/iv_image"
+                app:layout_constraintTop_toTopOf="@id/tv_time">
 
                 <RadioButton
                     android:id="@+id/rb_time1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="평일 선호"
-                    android:button="@drawable/selector_button" />
+                    android:button="@drawable/selector_button"
+                    android:text="평일 선호" />
 
                 <RadioButton
                     android:id="@+id/rb_time2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="주말 선호"
-                    android:button="@drawable/selector_button" />
+                    android:button="@drawable/selector_button"
+                    android:text="주말 선호" />
             </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rg_time1">
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:background="@color/darkgray"
+                    app:layout_constraintTop_toTopOf="parent"></View>
+
+                <TextView
+                    android:id="@+id/tv_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_16dp"
+                    android:text="N개의 댓글"
+                    app:layout_constraintTop_toBottomOf="@id/line1" />
+
+                <ListView
+                    android:id="@+id/lv_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/transParent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_comment"></ListView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/lv_comment"
+                    android:text="노느매기 참여하기"/>
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <Button
                 android:id="@+id/btn_register"
@@ -233,7 +270,6 @@
                 android:text="등록하기"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/rg_time1" />
-        </android.support.constraint.ConstraintLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
