@@ -9,6 +9,9 @@
         android:id="@+id/item_noneumaegi"
         android:icon="@drawable/ic_launcher_background"
         android:title="내 노느매기"></item>
+    <item android:id="@+id/item_favorite"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="관심 노느매기"></item>
     <item
         android:id="@+id/item_setting"
         android:icon="@drawable/ic_launcher_background"

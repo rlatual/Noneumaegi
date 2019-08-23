@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_main_listview_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/rect_round_gray"
-    android:padding="@dimen/padding_8dp"
-    android:layout_marginBottom="@dimen/margin_16dp">
+    android:padding="@dimen/padding_8dp">
 
     <ImageView
         android:id="@+id/iv_image"
@@ -41,8 +41,8 @@
         android:id="@+id/tv_money"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="nnnn원"
         android:layout_marginTop="@dimen/padding_8dp"
+        android:text="nnnn원"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/tv_addr"
         app:layout_constraintRight_toLeftOf="@+id/tv_number"
@@ -54,15 +54,70 @@
         android:layout_height="wrap_content"
         android:text="개수"
         app:layout_constraintLeft_toRightOf="@id/tv_money"
-        app:layout_constraintRight_toRightOf="@+id/iv_person"
+        app:layout_constraintRight_toLeftOf="@+id/iv_person1"
         app:layout_constraintTop_toTopOf="@id/tv_money" />
 
     <ImageView
-        android:id="@+id/iv_person"
+        android:id="@+id/iv_person1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_add_primcolor_24dp"
-        app:layout_constraintLeft_toRightOf="@id/tv_number"
-        app:layout_constraintRight_toRightOf="@id/tv_addr"
+        android:background="@drawable/ic_person_primcolor_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintLeft_toRightOf="@id/tv_person1"
+        app:layout_constraintRight_toLeftOf="@id/iv_person2"
         app:layout_constraintTop_toTopOf="@id/tv_money" />
+
+    <TextView
+        android:id="@+id/tv_person1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="@id/iv_person1"
+        app:layout_constraintLeft_toRightOf="@id/iv_person1"
+        app:layout_constraintRight_toLeftOf="@id/tv_person2"
+        app:layout_constraintTop_toTopOf="@id/iv_person1"></TextView>
+
+    <TextView
+        android:id="@+id/tv_person2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintBottom_toBottomOf="@id/tv_person1"
+        app:layout_constraintLeft_toRightOf="@id/tv_person1"
+        app:layout_constraintRight_toLeftOf="@id/iv_person2"
+        app:layout_constraintTop_toTopOf="@id/tv_person1"></TextView>
+
+
+    <ImageView
+        android:id="@+id/iv_person2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_8dp"
+        android:background="@drawable/ic_person_gray_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintLeft_toRightOf="@id/tv_person2"
+        app:layout_constraintRight_toLeftOf="@id/tv_person3"
+        app:layout_constraintTop_toTopOf="@id/tv_money" />
+
+    <TextView
+        android:id="@+id/tv_person3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintLeft_toRightOf="@id/iv_person2"
+        app:layout_constraintRight_toLeftOf="@id/tv_person4"
+        app:layout_constraintTop_toTopOf="@id/tv_number"></TextView>
+
+    <TextView
+        android:id="@+id/tv_person4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintLeft_toRightOf="@id/tv_person3"
+        app:layout_constraintRight_toRightOf="@id/tv_addr"
+        app:layout_constraintTop_toTopOf="@id/tv_number"></TextView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

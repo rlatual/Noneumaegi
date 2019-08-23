@@ -1,13 +1,16 @@
 package com.nonu.noneumaegi.VO;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
 
-public class MainItemVO {
-    private Drawable icon, person;
+import java.io.Serializable;
+
+public class MainItemVO implements Serializable {
+    private Bitmap icon;
     private String addr;
     private String name;
     private String money;
     private String number;
+    int totalperson, joinperson;
 
     public String getMoney() {
         return money;
@@ -17,21 +20,12 @@ public class MainItemVO {
         this.money = money;
     }
 
-
-    public Drawable getIcon() {
+    public Bitmap getIcon() {
         return icon;
     }
 
-    public void setIcon(Drawable icon) {
+    public void setIcon(Bitmap icon) {
         this.icon = icon;
-    }
-
-    public Drawable getPerson() {
-        return person;
-    }
-
-    public void setPerson(Drawable person) {
-        this.person = person;
     }
 
     public String getAddr() {
@@ -58,4 +52,19 @@ public class MainItemVO {
         this.number = number;
     }
 
+    public int getTotalperson() {
+        return totalperson;
+    }
+
+    public void setTotalperson(int totalperson) {
+        this.totalperson = totalperson;
+    }
+
+    public int getJoinperson() {
+        return joinperson;
+    }
+
+    public void setJoinperson(int joinperson) {
+        this.joinperson = joinperson;
+    }
 }
